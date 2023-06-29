@@ -2,8 +2,9 @@ const express = require("express");
 const AuthRoute = require("./routes/authRoute.js");
 const mongoose = require("mongoose");
 const {bookShow} = require("./models/BookMovies.js")
+const  moviesRouter  = require("./routes/MovieRoute.js")
 const cors =require('cors')
-const {createClient} =require('redis')
+
 const User = require("./models/user.js");
 const Movies = require("./models/movies.js");
 const Theater = require("./models/MovieHall.js")
@@ -27,21 +28,7 @@ mongoose
 
 
 
-  const client = createClient({
-      password: '583Vl81nXn4TtcFIOw1jZnwGFRHy5vEI',
-      socket: {
-          host: 'redis-14522.c9.us-east-1-4.ec2.cloud.redislabs.com',
-          port: 14522
-      }
-  });
 
-  client.configSet( 'maxmemory-policy', 'volatile-lru', (error, result) => {
-    if (error) {
-      console.error('Error setting maxmemory-policy:', error);
-    } else {
-      console.log('maxmemory-policy set successfully');
-    }
-  });
 
 
 
@@ -53,6 +40,7 @@ app.use(cors())
 
 
 app.use("/auth", AuthRoute);
+app.use("/movies",moviesRouter)
 
 app.get("/", (req, res) => {
   res.send("hello world");
