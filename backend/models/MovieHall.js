@@ -2,8 +2,18 @@ const mongoose = require("mongoose");
 
 const ThreaterSchema = new mongoose.Schema({
   name: String,
-  location: String,
+  city: String,
   pincode: String,
+  email:{
+    required:true,
+    type:String,
+    unique:true
+  },
+  password:{
+required:true,
+type:String,
+
+  },
   PresentMovies: [
     {
       type: mongoose.Types.ObjectId,
