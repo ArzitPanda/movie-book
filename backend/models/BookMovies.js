@@ -12,7 +12,7 @@ const BookShowSchema = new mongoose.Schema({
         },
         show:{
                 type:mongoose.Types.ObjectId,
-                ref:'movie'
+                ref:'movies'
         },
         theater:{
             type:mongoose.Types.ObjectId,
@@ -21,10 +21,14 @@ const BookShowSchema = new mongoose.Schema({
         screen:String,
         slot:Number,
         seats:[String],
+        ticket:String,
         bookingDate:Date,
         showDate:Date,
         isWatched:{
             type:Boolean,
+        },
+        isPaid:{
+            type:Boolean
         },
         payment:Payment.paymentSchema
 

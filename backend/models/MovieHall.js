@@ -14,10 +14,19 @@ required:true,
 type:String,
 
   },
+
+  screens:[
+    {
+      name:String,
+      seats:[String]
+    }
+  ],
+
+
   PresentMovies: [
     {
-      type: mongoose.Types.ObjectId,
-      ref: "Movie",
+      id: mongoose.Types.ObjectId,
+
 
       start: {
         type: Date,
@@ -29,10 +38,11 @@ type:String,
       },
       runningStatus: [
         {
-          type: Date,
+
+          date: Date,
           slot: Number,
           screenName: String,
-          seatAvailable: [String],
+          seatBooked:[String],
           status: Number,
         },
       ],

@@ -26,6 +26,10 @@ const moviesSchema = new mongoose.Schema({
    name:String,
   },
 
+  price:{
+    type:Number
+  }
+
 });
 
 
