@@ -8,7 +8,7 @@ const AuthRoute = express.Router();
 
 
 
-AuthRoute.get("/",login)
-AuthRoute.post("/:type",signup)
+AuthRoute.post("/",login)
+AuthRoute.post("/signup/:type",signup)
 
 module.exports =AuthRoute;

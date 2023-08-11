@@ -23,6 +23,7 @@ const BookShowSchema = new mongoose.Schema({
         seats:[String],
         ticket:String,
         bookingDate:Date,
+        orderId:String,
         showDate:Date,
         isWatched:{
             type:Boolean,

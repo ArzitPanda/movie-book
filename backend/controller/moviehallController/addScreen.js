@@ -10,7 +10,7 @@ const addScreen = async (req, res) => {
 
 
 
-  ScreenName.screens
+  
 
   if (!ScreenName) {
     const data = await Hall.findByIdAndUpdate(id, {

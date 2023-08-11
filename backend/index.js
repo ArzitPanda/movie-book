@@ -3,6 +3,7 @@ const AuthRoute = require("./routes/authRoute.js");
 const mongoose = require("mongoose");
 const {bookShow} = require("./models/BookMovies.js")
 const  moviesRouter  = require("./routes/MovieRoute.js")
+const BookRouter  = require("./routes/bookRoute.js")
 const cors =require('cors')
 
 const User = require("./models/user.js");
@@ -41,6 +42,7 @@ app.use(cors())
 
 app.use("/auth", AuthRoute);
 app.use("/movies",moviesRouter)
+app.use("/book",BookRouter)
 
 app.get("/", (req, res) => {
   res.send("hello world");
